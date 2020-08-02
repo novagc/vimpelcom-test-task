@@ -4,8 +4,8 @@ using System.Text;
 
 namespace WordCounter.Interfaces
 {
-    interface ICounter
+    public interface ICounter
     {
-        Dictionary<string, int> Count(IReader reader);
+        public Dictionary<string, int> Count();
     }
 }

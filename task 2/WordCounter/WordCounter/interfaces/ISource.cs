@@ -4,8 +4,8 @@ using System.Text;
 
 namespace WordCounter.Interfaces
 {
-    interface ISource
+    public interface ISource
     {
-        string Read();
+        public string Read();
     }
 }

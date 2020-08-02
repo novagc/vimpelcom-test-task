@@ -4,8 +4,9 @@ using System.Text;
 
 namespace WordCounter.Interfaces
 {
-    interface IReader
+    public interface IReader
     {
-        IEnumerable<string> GetWords(ISource source);
+        public ISource Source { get; set; }
+        public IEnumerable<string> GetWords();
     }
 }
