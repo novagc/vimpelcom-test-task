@@ -16,6 +16,10 @@ namespace WordCounter.File
             Source = source;
         }
 
-        public IEnumerable<string> GetWords() => new Regex(@"\w{10,}").Matches(Source.Read()).ToList().Select(x => x.Value);
+        public IEnumerable<string> GetWords(int minLen) => 
+            new Regex($"\\w{{{minLen},}}")
+            .Matches(Source.Read())
+            .ToList()
+            .Select(x => x.Value);
     }
 }
