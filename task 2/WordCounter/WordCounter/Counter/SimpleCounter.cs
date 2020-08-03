@@ -8,18 +8,20 @@ namespace WordCounter.Counter
 {
     public class SimpleCounter : ICounter
     {
+        private int minLen;
         public IReader Reader { get; set; }
 
-        public SimpleCounter(IReader reader)
+        public SimpleCounter(IReader reader, int minLen)
         {
             Reader = reader;
+            this.minLen = minLen;
         }
 
-        public Dictionary<string, int> Count()
+        public Dictionary<string, int> Count(Dictionary<string, int> res = null)
         {
-            Dictionary<string, int> result = new Dictionary<string, int>();
+            Dictionary<string, int> result = res == null ? new Dictionary<string, int>() : res;
 
-            foreach (string word in Reader.GetWords())
+            foreach (string word in Reader.GetWords(minLen))
             {
                 if (!result.ContainsKey(word))
                 {
