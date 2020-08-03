@@ -7,6 +7,6 @@ namespace WordCounter.Interfaces
     public interface IReader
     {
         public ISource Source { get; set; }
-        public IEnumerable<string> GetWords();
+        public IEnumerable<string> GetWords(int minLen);
     }
 }
